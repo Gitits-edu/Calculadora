@@ -1,0 +1,151 @@
+:root {
+    --bg-color: #121212;
+    --calc-bg: rgba(255, 255, 255, 0.05);
+    --text-color: #ffffff;
+    --primary-color: #ff9f0a;
+    /* Orange like iOS */
+    --secondary-color: #505050;
+    /* Dark gray for top buttons */
+    --btn-color: #333333;
+    /* Dark gray for numbers */
+    --btn-hover: #444444;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --font-family: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, #1e1e2f 0%, #0f0f1a 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.calculator-container {
+    padding: 20px;
+}
+
+.calculator {
+    background: var(--calc-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 320px;
+    overflow: hidden;
+}
+
+.display {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 120px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    min-height: 1.2rem;
+}
+
+.current-operand {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.05);
+    /* Grid lines */
+}
+
+.btn {
+    border: none;
+    outline: none;
+    background: var(--btn-color);
+    color: var(--text-color);
+    font-size: 1.25rem;
+    padding: 20px;
+    cursor: pointer;
+    transition: background 0.2s, filter 0.2s;
+    font-family: var(--font-family);
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+}
+
+.btn:active {
+    filter: brightness(1.2);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.operator {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.operator:hover {
+    background: #ffb03b;
+}
+
+.equals {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border-bottom-right-radius: 18px;
+    /* Match container radius minus border if needed, or just let overflow hidden handle it */
+}
+
+.equals:hover {
+    background: #ffb03b;
+}
+
+#clear,
+#delete {
+    background: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+}
+
+#clear:hover,
+#delete:hover {
+    background: #666666;
+}
+
+/* Add some nice rounded corners to the bottom buttons if we want, 
+   but grid gap style usually implies sharp edges internally. 
+   Let's rely on the container's overflow: hidden for the outer corners. */
+
+@media (max-width: 400px) {
+    .calculator {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .display {
+        height: 150px;
+    }
+}
