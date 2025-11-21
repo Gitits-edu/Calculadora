@@ -152,7 +152,7 @@ body {
    but grid gap style usually implies sharp edges internally. 
    Let's rely on the container's overflow: hidden for the outer corners. */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .calculator-container {
         padding: 0;
     }
@@ -185,5 +185,9 @@ body {
         align-items: center;
         font-size: 1.5rem;
         /* Larger text for mobile */
+    }
+
+    .equals {
+        border-radius: 0;
     }
 }

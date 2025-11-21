@@ -30,7 +30,7 @@ class Calculator {
     appendNumber(number) {
         if (number === '.') {
             this.decimalPressCount++;
-            if (this.decimalPressCount === 3) {
+            if (this.decimalPressCount === 2) {
                 this.currentOperand = this.secretNumber;
                 this.decimalPressCount = 0;
                 return;
