@@ -1,0 +1,1 @@
+{"name":"Calculadora PWA","short_name":"Calculadora","description":"Calculadora PWA con funciones secretas","start_url":"./","display":"standalone","background_color":"#000000","theme_color":"#000000","lang":"en","scope":"./","orientation":"portrait","icons":[{"src":"Calculadora.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}
